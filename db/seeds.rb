@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# Create expenses for all months
+(1..12).each do |month|
+    Expense.create(
+      name: "Expense for #{Date::MONTHNAMES[month]}",
+      amount: rand(100),
+      date: Date.new(2023, month, rand(1..28))
+    )
+  end
